@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
+        <file>file:/D:/Desenvolvimento/JAVA/AFD/source/src/afd/automato/UnidadeControle.java</file>
+        <file>file:/D:/Desenvolvimento/JAVA/AFD/source/src/afd/ftransicao/FuncaoTransicao.java</file>
+        <file>file:/D:/Desenvolvimento/JAVA/AFD/source/src/afd/conjuntos/Estados.java</file>
+        <file>file:/D:/Desenvolvimento/JAVA/AFD/source/src/afd/conjuntos/Conjunto.java</file>
+        <file>file:/D:/Desenvolvimento/JAVA/AFD/source/src/afd/conjuntos/Alfabeto.java</file>
+        <file>file:/D:/Desenvolvimento/JAVA/AFD/source/src/afd/automato/AutomatoFinito.java</file>
+        <file>file:/D:/Desenvolvimento/JAVA/AFD/source/src/afd/conjuntos/Itr.java</file>
+        <file>file:/D:/Desenvolvimento/JAVA/AFD/source/src/afd/automato/FitaEntrada.java</file>
+        <file>file:/D:/Desenvolvimento/JAVA/AFD/source/src/afd/automato/UnidadeLeitura.java</file>
+        <file>file:/D:/Desenvolvimento/JAVA/AFD/source/src/afd/automato/processamento/EtapaProcessamento.java</file>
+        <file>file:/D:/Desenvolvimento/JAVA/AFD/source/src/afd/automato/processamento/HistoricoProcessamento.java</file>
+        <file>file:/D:/Desenvolvimento/JAVA/AFD/source/src/afd/AFD.java</file>
+        <file>file:/D:/Desenvolvimento/JAVA/AFD/source/src/afd/ftransicao/Transicao.java</file>
+        <file>file:/D:/Desenvolvimento/JAVA/AFD/source/src/afd/tipos/Simbolo.java</file>
+        <file>file:/D:/Desenvolvimento/JAVA/AFD/source/src/afd/ftransicao/TransicaoNaoDefinidaException.java</file>
+    </open-files>
+</project-private>
