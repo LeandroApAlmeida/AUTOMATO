@@ -10,7 +10,7 @@ public class Historico implements Iterable<Etapa> {
     
     private final List<Etapa> historico = new ArrayList<>();
     
-    private StatusParada statusProcessamento;
+    private StatusParada status;
     
     
     public void adicionar(String estado1, Character simbolo, String estado2,
@@ -36,13 +36,13 @@ public class Historico implements Iterable<Etapa> {
     }
 
     
-    public void setStatus(StatusParada statusProcessamento) {
-        this.statusProcessamento = statusProcessamento;
+    public void setStatus(StatusParada status) {
+        this.status = status;
     }
 
     
     public StatusParada getStatus() {
-        return statusProcessamento;
+        return status;
     }
    
     

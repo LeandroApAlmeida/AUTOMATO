@@ -1122,7 +1122,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jtFuncaoTransicao.setSelectionBackground(new java.awt.Color(255, 255, 51));
         jScrollPane2.setViewportView(jtFuncaoTransicao);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("  Palavra ( W )  "));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("  Palavra ( w )  "));
 
         jtpResultado.setEditable(false);
         jtpResultado.setContentType("text/html"); // NOI18N
