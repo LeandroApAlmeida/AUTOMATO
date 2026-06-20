@@ -22,11 +22,15 @@ Um Autômato Finito Determinístico A é uma quíntupla, A = (Q, Σ, δ, q0, F) 
 
 Se w = a1a2 ... an é uma cadeia de símbolos sobre o alfabeto Σ, o autômato M aceita a cadeia w se e somente se existe uma sequência de estados, r0, r1, ..., rn, em Q com as seguintes condições:
 
-  &nbsp;&nbsp; r0 = q0
+<br>
+
+&nbsp;&nbsp; r0 = q0
   
-  &nbsp;&nbsp; ri+1 = δ(ri, ai+1), para i = 0, ..., n−1
+&nbsp;&nbsp; ri+1 = δ(ri, ai+1), para i = 0, ..., n−1
   
-  &nbsp;&nbsp; rn ∈ F.
+&nbsp;&nbsp; rn ∈ F.
+
+<br>
   
 A primeira condição afirma que a máquina se inicia no estado inicial q0. 
 
