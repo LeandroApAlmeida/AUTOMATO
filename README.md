@@ -14,7 +14,7 @@ Um Autômato Finito Determinístico A é uma quíntupla, A = (Q, Σ, δ, q0, F) 
   
 * F: Conjunto de estados terminais (F ⊆ Q).
   
-Se w = a1a2 ... an é uma cadeia de símbolos sobre o alfabeto Σ, o autômato M aceita a cadeia w se e somente se existe uma sequência de estados, r0, r1, ..., rn, em Q com as seguintes condições:
+Se w = a<sub>1</sub>a2 ... an é uma cadeia de símbolos sobre o alfabeto Σ, o autômato M aceita a cadeia w se e somente se existe uma sequência de estados, r0, r1, ..., rn, em Q com as seguintes condições:
 
   r0 = q0
   
