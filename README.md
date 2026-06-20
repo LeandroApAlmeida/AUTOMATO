@@ -8,15 +8,15 @@ Um Autômato Finito Determinístico A é uma quíntupla, A = (Q, Σ, δ, q0, F) 
 
 <br>
 
-&nbsp;&nbsp; Σ: Conjunto finito de símbolos de entrada chamado Alfabeto.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Σ: Conjunto finito de símbolos de entrada chamado Alfabeto.
   
-&nbsp;&nbsp; Q: Conjunto finito de estados.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Q: Conjunto finito de estados.
   
-&nbsp;&nbsp; δ: Função de transição (δ : Q × Σ → Q).
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; δ: Função de transição (δ : Q × Σ → Q).
   
-&nbsp;&nbsp; q0: Estado inicial (q0 ∈ Q).
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; q0: Estado inicial (q0 ∈ Q).
   
-&nbsp;&nbsp; F: Conjunto de estados terminais (F ⊆ Q).
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; F: Conjunto de estados terminais (F ⊆ Q).
 
 <br>
 
@@ -24,11 +24,11 @@ Se w = a1a2 ... an é uma cadeia de símbolos sobre o alfabeto Σ, o autômato M
 
 <br>
 
-&nbsp;&nbsp; r0 = q0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; r0 = q0
   
-&nbsp;&nbsp; ri+1 = δ(ri, ai+1), para i = 0, ..., n−1
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ri+1 = δ(ri, ai+1), para i = 0, ..., n−1
   
-&nbsp;&nbsp; rn ∈ F.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rn ∈ F.
 
 <br>
   
