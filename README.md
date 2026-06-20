@@ -1,5 +1,7 @@
 <h3>Simulador de Autômato Finito Determinístico</h3>
 
+<br>
+
 Neste projeto implemento um simulador de Autômato Finito Determinístico (AFD) usando Java Swing.
 
 Um Autômato Finito Determinístico A é uma quíntupla, A = (Q, Σ, δ, q0, F) onde:
@@ -27,7 +29,7 @@ A terceira e última condição diz que a máquina aceita w se e somente se o ú
 
 O conjunto de cadeias que M aceita é chamado Linguagem reconhecida por M e é simbolicamente representado por L(M).
 
-
+<br>
 
 ![Tela 2](https://github.com/LeandroApAlmeida/AUTOMATO/assets/158072587/1b127fd0-dde3-4368-a2d6-a5bcf403ef84)
 
