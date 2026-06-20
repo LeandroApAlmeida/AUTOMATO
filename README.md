@@ -1,4 +1,4 @@
-<h3>Simulador de um Autômato Finito Determinístico</h3>
+<h3>Simulador de Autômato Finito Determinístico</h3>
 
 Neste projeto implemento um simulador de Autômato Finito Determinístico (AFD) usando Java Swing.
 
