@@ -8,15 +8,15 @@ Um Autômato Finito Determinístico A é uma quíntupla, A = (Q, Σ, δ, q0, F) 
 
 <br>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Σ: Conjunto finito de símbolos de entrada chamado Alfabeto.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Σ:</b> Conjunto finito de símbolos de entrada chamado Alfabeto.
   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Q: Conjunto finito de estados.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Q:</b> Conjunto finito de estados.
   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; δ: Função de transição (δ : Q × Σ → Q).
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>δ:</b> Função de transição (δ : Q × Σ → Q).
   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; q0: Estado inicial (q0 ∈ Q).
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>q0:</b> Estado inicial (q0 ∈ Q).
   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; F: Conjunto de estados terminais (F ⊆ Q).
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>F:</b> Conjunto de estados terminais (F ⊆ Q).
 
 <br>
 
