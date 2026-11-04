@@ -1,31 +1,46 @@
+<h3>Simulador de Autômato Finito Determinístico</h3>
+
+<br>
+
+Neste projeto implemento um simulador de Autômato Finito Determinístico (AFD) usando Java Swing.
+
 Um Autômato Finito Determinístico A é uma quíntupla, A = (Q, Σ, δ, q0, F) onde:
 
-* Σ: Conjunto finito de símbolos de entrada chamado Alfabeto.
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Σ:</b> Conjunto finito de símbolos de entrada chamado Alfabeto.
   
-* Q: Conjunto finito de estados.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Q:</b> Conjunto finito de estados.
   
-* δ: Função de transição (δ : Q × Σ → Q).
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>δ:</b> Função de transição (δ : Q × Σ → Q).
   
-* q0: Estado inicial (q0 ∈ Q).
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>q0:</b> Estado inicial (q0 ∈ Q).
   
-* F: Conjunto de estados terminais (F ⊆ Q).
-  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>F:</b> Conjunto de estados terminais (F ⊆ Q).
+
+<br>
+
 Se w = a1a2 ... an é uma cadeia de símbolos sobre o alfabeto Σ, o autômato M aceita a cadeia w se e somente se existe uma sequência de estados, r0, r1, ..., rn, em Q com as seguintes condições:
 
-  r0 = q0
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; r0 = q0
   
-  ri+1 = δ(ri, ai+1), para i = 0, ..., n−1
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ri+1 = δ(ri, ai+1), para i = 0, ..., n−1
   
-  rn ∈ F.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rn ∈ F.
+
+<br>
   
-A primeira condição afirma que a máquina se inicia no estado inicial q0. A segunda condição diz que, dado cada símbolo da entrada w, a máquina transita de estado em estado de acordo com a função de transição δ.
+A primeira condição afirma que a máquina se inicia no estado inicial q0. 
+
+A segunda condição diz que, dado cada símbolo da entrada w, a máquina transita de estado em estado de acordo com a função de transição δ.
+
 A terceira e última condição diz que a máquina aceita w se e somente se o último símbolo da entrada leva o autômato a parar em um estado f tal que f ∈ F. Caso contrário, diz-se que a máquina rejeita a entrada.
 
 O conjunto de cadeias que M aceita é chamado Linguagem reconhecida por M e é simbolicamente representado por L(M).
 
-Este programa simula um Autômato Finito Determinístico A.
-
-
+<br>
 
 ![Tela 2](https://github.com/LeandroApAlmeida/AUTOMATO/assets/158072587/1b127fd0-dde3-4368-a2d6-a5bcf403ef84)
 
