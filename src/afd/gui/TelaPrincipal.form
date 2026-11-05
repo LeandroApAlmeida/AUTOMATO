@@ -614,7 +614,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="jbVerificarPalavra">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Ver"/>
+            <Property name="text" type="java.lang.String" value="Verificar"/>
             <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
               <ComponentRef name="jtfAlfabeto"/>
             </Property>

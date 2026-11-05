@@ -5,7 +5,7 @@ import java.util.List;
 
 
 /**
- * Classe que representa o Alfabeto de símbolos de entrada (Σ).
+ * Classe que representa o alfabeto de símbolos de entrada (Σ).
  */
 public class Alfabeto extends Conjunto<Simbolo> {
 

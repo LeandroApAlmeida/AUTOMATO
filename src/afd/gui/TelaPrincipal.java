@@ -26,7 +26,7 @@ import javax.swing.table.TableCellRenderer;
 
 
 /**
- * Tela principal do simulador de Autômato Finito Determinístico.
+ * Tela do simulador de Autômato Finito Determinístico.
  */
 public class TelaPrincipal extends javax.swing.JFrame {
     
@@ -136,16 +136,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
         boolean existeAlfabeto = automatoFinito.getAlfabeto().tamanho() > 0;
         
         //Menu Alfabeto.
+        
         jmiRemoverSimbolos.setEnabled(simbolosSelecionados);
         jmiLimparAlfabeto.setEnabled(existeAlfabeto);
         
         //Menu Estados Não-Terminais.
+        
         jmiRemoverEstadosNaoTerminais.setEnabled(estadosNTerminaisSelecionados);
         jmiDefinirTerminal.setEnabled(estadosNTerminaisSelecionados);
         jbDefinirTerminais.setEnabled(estadosNTerminaisSelecionados);
         jmiLimparEstados.setEnabled(existeEstados);
         
         //Menu EstadosTerminais.
+        
         jmiRemoverTerminais.setEnabled(estadosTerminaisSelecionados);
         jmiDefinirNaoTerminal.setEnabled(estadosTerminaisSelecionados);
         jbDefinirNaoTerminais.setEnabled(estadosTerminaisSelecionados);
@@ -478,22 +481,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
         
         automatoFinito.getFuncaoTransicao().limpar();        
         
-        String estado1;
-        String estado2;
-        char simbolo;      
+        String estadoInicial;
+        String novoEstado;
+        char simboloLido;      
         
         for (int i = 0; i < jtFuncaoTransicao.getModel().getRowCount(); i++) {
         
             for (int j = 1; j < jtFuncaoTransicao.getModel().getColumnCount(); j++) {
                 
-                estado1 = (String)jtFuncaoTransicao.getModel().getValueAt(i, 0);
-                simbolo = jtFuncaoTransicao.getModel().getColumnName(j).charAt(0);
-                estado2 = (String)jtFuncaoTransicao.getModel().getValueAt(i, j);                                 
+                estadoInicial = (String)jtFuncaoTransicao.getModel().getValueAt(i, 0);
+                simboloLido = jtFuncaoTransicao.getModel().getColumnName(j).charAt(0);
+                novoEstado = (String)jtFuncaoTransicao.getModel().getValueAt(i, j);                                 
                 
                 automatoFinito.getFuncaoTransicao().setTransicao(
-                    estado1,
-                    simbolo,
-                    estado2
+                    estadoInicial,
+                    simboloLido,
+                    novoEstado
                 );                
             
             }
@@ -1323,7 +1326,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jbVerificarPalavra.setText("Ver");
+        jbVerificarPalavra.setText("Verificar");
         jbVerificarPalavra.setNextFocusableComponent(jtfAlfabeto);
         jbVerificarPalavra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

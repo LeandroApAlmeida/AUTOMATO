@@ -1,38 +1,39 @@
 package afd.automato;
 
 /**
- * Classe que representa uma transição <b>Estado × Símbolo → Estado</b> da função
- * de transição.
+ * Classe que representa uma transição <b>Estado Inicial × Símbolo Lido → 
+ * Novo Estado</b> da função de transição.
  */
 public class Transicao {
         
     
     /**Estado inicial.*/
-    private final Estado estado1;
+    private final Estado estadoInicial;
     
     /**Símbolo lido da fita.*/
-    private final Simbolo simbolo;
+    private final Simbolo simboloLido;
     
     /**Novo estado.*/
-    private Estado estado2;
+    private Estado novoEstado;
     
 
     /**
      * Constructor da classe.
      * 
-     * @param estado1 Estado inicial.
+     * @param estadoInicial Estado inicial.
      * 
-     * @param simbolo Símbolo lido da fita.
+     * @param simboloLido Símbolo lido da fita.
      * 
-     * @param estado2 Novo estado.
+     * @param novoEstado Novo estado.
      */
-    public Transicao(Estado estado1, Simbolo simbolo, Estado estado2) {
+    public Transicao(Estado estadoInicial, Simbolo simboloLido, 
+    Estado novoEstado) {
         
-        this.estado1 = estado1;
+        this.estadoInicial = estadoInicial;
         
-        this.estado2 = estado2;
+        this.novoEstado = novoEstado;
         
-        this.simbolo = simbolo;
+        this.simboloLido = simboloLido;
     
     }
 
@@ -42,9 +43,21 @@ public class Transicao {
      * 
      * @return Estado inicial.
      */
-    public Estado getEstado1() {
+    public Estado getEstadoInicial() {
         
-        return estado1;
+        return estadoInicial;
+        
+    }
+    
+    
+    /**
+     * Obter o símbolo lido da fita.
+     * 
+     * @return Símbolo lido da fita.
+     */
+    public Simbolo getSimboloLido() {
+        
+        return simboloLido;
         
     }
 
@@ -54,33 +67,21 @@ public class Transicao {
      * 
      * @return Novo estado.
      */
-    public Estado getEstado2() {
+    public Estado getNovoEstado() {
         
-        return estado2;
+        return novoEstado;
     
-    }
-
-    
-    /**
-     * Obter o símbolo lido da fita.
-     * 
-     * @return Símbolo lido da fita.
-     */
-    public Simbolo getSimbolo() {
-        
-        return simbolo;
-        
     }
 
     
     /**
      * Definir o novo estado da transição.
      * 
-     * @param estado2 Novo estado da transição.
+     * @param novoEstado Novo estado da transição.
      */
-    public void setEstado2(Estado estado2) {
+    public void setNovoEstado(Estado novoEstado) {
         
-        this.estado2 = estado2;
+        this.novoEstado = novoEstado;
         
     }
 
@@ -92,9 +93,9 @@ public class Transicao {
             
             Transicao t = (Transicao)obj;
             
-            return t.getEstado1().equals(estado1) &&
-            t.getEstado2().equals(estado2) &&
-            t.getSimbolo().equals(simbolo);
+            return t.getEstadoInicial().equals(estadoInicial) &&
+            t.getNovoEstado().equals(novoEstado) &&
+            t.getSimboloLido().equals(simboloLido);
             
         }
         

@@ -21,22 +21,22 @@ public class Log implements Iterable<EntradaLog> {
     /**
      * Adicionar uma entrada de log.
      * 
-     * @param estado1 Estado inicial.
+     * @param estadoInicial Estado inicial.
      * 
-     * @param simbolo Símbolo lido da fita.
+     * @param simboloLido Símbolo lido da fita.
      * 
-     * @param estado2 Novo estado.
+     * @param novoEstado Novo estado.
      * 
      * @param parcelaNaoLida Parcela ainda não lida da fita.
      */
-    public void adicionar(String estado1, Character simbolo, String estado2,
-    String parcelaNaoLida) {
+    public void adicionar(String estadoInicial, Character simboloLido, 
+    String novoEstado, String parcelaNaoLida) {
         
         log.add (
             new EntradaLog(
-                estado1, 
-                estado2, 
-                simbolo, 
+                estadoInicial,
+                simboloLido,
+                novoEstado,
                 parcelaNaoLida
             )
         );

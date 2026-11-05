@@ -31,7 +31,8 @@ public class Estado implements Comparable<Estado> {
  
     
     /**
-     * Constructor da classe.
+     * Constructor da classe. Define o status de estado terminal como false por
+     * default.
      * 
      * @param nome Nome do estado.
      */

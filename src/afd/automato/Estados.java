@@ -6,7 +6,7 @@ import java.util.List;
 
 
 /**
- * Classe que representa o conjunto finito de estados (Q) do Autômato Finito.
+ * Classe que representa o conjunto finito de estados (Q).
  */
 public class Estados extends Conjunto<Estado> {
 
@@ -119,6 +119,6 @@ public class Estados extends Conjunto<Estado> {
         Collections.sort(lista);
 
     }
-    
-    
+
+
 }

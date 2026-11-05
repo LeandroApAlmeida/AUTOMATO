@@ -10,13 +10,13 @@ public class EntradaLog {
     
     
     /**Estado inicial.*/
-    private final String estado1;
-    
-    /**Novo estado.*/
-    private final String estado2;
+    private final String estadoInicial;
     
     /**Símbolo lido da fita.*/
-    private final Character simbolo;
+    private final Character simboloLido;
+    
+    /**Novo estado.*/
+    private final String novoEstado;
     
     /**Parcela ainda não lida da fita.*/
     private final String parcNaoLidaFita;
@@ -25,22 +25,22 @@ public class EntradaLog {
     /**
      * Constructor da classe.
      * 
-     * @param estado1 Estado inicial.
+     * @param estadoInicial Estado inicial.
      * 
-     * @param estado2 Novo estado.
+     * @param novoEstado Novo estado.
      * 
-     * @param simbolo Símbolo lido da fita.
+     * @param simboloLido Símbolo lido da fita.
      * 
      * @param parcelaNaoLidaFita Parcela ainda não lida da fita.
      */
-    public EntradaLog(String estado1, String estado2, Character simbolo,
-    String parcelaNaoLidaFita) {
+    public EntradaLog(String estadoInicial, Character simboloLido, 
+    String novoEstado, String parcelaNaoLidaFita) {
         
-        this.estado1 = estado1;
+        this.estadoInicial = estadoInicial;
         
-        this.estado2 = estado2;
+        this.novoEstado = novoEstado;
         
-        this.simbolo = simbolo;
+        this.simboloLido = simboloLido;
         
         this.parcNaoLidaFita = parcelaNaoLidaFita;
     
@@ -52,9 +52,9 @@ public class EntradaLog {
      * 
      * @return Estado inicial. 
      */
-    public String getEstado1() {
+    public String getEstadoInicial() {
         
-        return estado1;
+        return estadoInicial;
     
     }
 
@@ -64,9 +64,9 @@ public class EntradaLog {
      * 
      * @return Estado final.
      */
-    public String getEstado2() {
+    public String getNovoEstado() {
         
-        return estado2;
+        return novoEstado;
         
     }
     
@@ -76,9 +76,9 @@ public class EntradaLog {
      * 
      * @return Símbolo lido da fita.
      */
-    public Character getSimbolo() {
+    public Character getSimboloLido() {
         
-        return simbolo;
+        return simboloLido;
         
     }
 

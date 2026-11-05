@@ -7,9 +7,13 @@ import java.util.List;
 
 /**
  * Classe que representa a função de transição (δ) do Autômato Finito. A função
- * de transição é uma função <b>δ: Q × Σ → Q</b>.
+ * de transição é uma função:
  * 
  * <br><br>
+ * 
+ * <p style="margin-left: 40px;">δ: Q × Σ → Q</p>
+ * 
+ * <br>
  * 
  * Por exemplo, seja o Autômato Finito:
  * 
@@ -24,7 +28,7 @@ import java.util.List;
  * 
  * <br>
  * 
- * onde a função de transição δ<sub>1</sub> é representada na tabela:
+ * A função de transição δ<sub>1</sub> é representada na tabela abaixo:
  * 
  * <br><br>
  * 
@@ -66,15 +70,10 @@ import java.util.List;
  * 
  * <br>
  * 
- * Esta classe representa a tabela, onde cada transição <b>Estado × Símbolo → Estado</b>
- * do autômato é definida. A unidade de controle do Autômato Finito precisa da 
- * função de transição para saber para qual estado mudar quando ler um símbolo 
- * da fita estando num estado <i>q</i>.
- * 
- * <br><br>
- * 
- * Comparando com um computador, a função de transição seria o programa que
- * controla o autômato, por isso ela é também chamada de função programa.
+ * A classe representa esta tabela, onde cada transição <b>Estado Inicial × 
+ * Símbolo Lido → Novo Estado</b> do autômato é definida. A unidade de controle
+ * do Autômato Finito precisa da função de transição para saber para qual estado
+ * mudar quando ler um símbolo da fita estando num estado <i>q<sub>i</sub></i>.
  */
 public class FuncaoTransicao implements Iterable<Transicao> {
     
@@ -85,7 +84,7 @@ public class FuncaoTransicao implements Iterable<Transicao> {
     /**Alfabeto de símbolos de entrada (Σ).*/
     private final Alfabeto alfabeto;
 
-    /**Lista de transições <b>Estado × Símbolo → Estado</b>.*/
+    /**Lista de transições <b>Estado Inicial × Símbolo Lido → Novo Estado</b>.*/
     private final List<Transicao> transicoes = new ArrayList<>();
 
     
@@ -116,10 +115,10 @@ public class FuncaoTransicao implements Iterable<Transicao> {
         
         for (int idx = 0; idx < transicoes.size(); idx++) {
             
-            Transicao t = transicoes.get(idx);
+            Transicao tc = transicoes.get(idx);
             
-            if (transicao.getEstado1().equals(t.getEstado1()) && 
-            transicao.getSimbolo().equals(t.getSimbolo())) {
+            if (transicao.getEstadoInicial().equals(tc.getEstadoInicial()) && 
+            transicao.getSimboloLido().equals(tc.getSimboloLido())) {
                 
                 return idx;
                 
@@ -133,33 +132,35 @@ public class FuncaoTransicao implements Iterable<Transicao> {
 
     
     /**
-     * Definir uma transição <b>Estado × Símbolo → Estado</b>. Caso a transição
-     * <b>Estado × Símbolo</b> esteja definida, apenas altera estado2.
+     * Definir uma transição <b>Estado Inicial × Símbolo Lido → Novo Estado</b>.
+     * Caso a transição <b>Estado Inicial × Símbolo Lido</b> esteja definida,
+     * apenas altera <b>Novo Estado</b>.
      * 
-     * @param estado1 Estado inicial.
+     * @param estadoInicial Estado inicial.
      * 
-     * @param simbolo Símbolo lido da fita.
+     * @param simboloLido Símbolo lido da fita.
      * 
-     * @param estado2 Novo estado.
+     * @param novoEstado Novo estado.
      * 
      * @return Se true, a transição foi inserida, se false, não.
      */
-    public boolean setTransicao(String estado1, Character simbolo, String estado2) {              
+    public boolean setTransicao(String estadoInicial, Character simboloLido, 
+    String novoEstado) {              
         
-        Estado e1 = estados.get(estado1);
-        Estado e2 = estados.get(estado2);        
-        Simbolo s = alfabeto.get(simbolo);        
+        Estado inicial = estados.get(estadoInicial);
+        Estado novo = estados.get(novoEstado);        
+        Simbolo simbolo = alfabeto.get(simboloLido);        
         
-        if (e1!=null && e2!=null && s!=null) {
+        if (inicial!=null && novo!=null && simbolo!=null) {
             
-            Transicao transicao = new Transicao(e1, s, e2);
+            Transicao transicao = new Transicao(inicial, simbolo, novo);
             
             int indice = indiceDe(transicao);
             
             if (indice < 0) {
                 transicoes.add(transicao);
             } else {
-                transicoes.get(indice).setEstado2(e2);
+                transicoes.get(indice).setNovoEstado(novo);
             }
             
             return true;
@@ -174,34 +175,41 @@ public class FuncaoTransicao implements Iterable<Transicao> {
     
     
     /**
-     * Obter o novo estado da transição <b>Estado × Símbolo</b>.
+     * Obter o <b>Novo Estado</b> da transição <b>Estado Inicial × Símbolo Lido
+     * → Novo Estado</b>.
      * 
-     * @param estado Estado inicial.
+     * @param estadoInicial Estado inicial.
      * 
-     * @param simbolo Símbolo lido da fita.
+     * @param simboloLido Símbolo lido da fita.
      * 
      * @return Novo estado da transição.
      * 
-     * @throws Exception Erro em caso da transição <b>Estado × Símbolo</b> não
-     * estar definida.
+     * @throws Exception Erro em caso da transição <b>Estado Inicial × 
+     * Símbolo Lido</b> não estar definida.
      */
-    public Estado getNovoEstado(String estado, Character simbolo) throws Exception {        
+    public Estado getNovoEstado(String estadoInicial, Character simboloLido) 
+    throws Exception {        
         
-        Estado e = estados.get(estado);
-        Simbolo s = alfabeto.get(simbolo);        
+        Estado inicial = estados.get(estadoInicial);
+        Simbolo simbolo = alfabeto.get(simboloLido);        
         
-        if (e!=null && s!=null) {
+        if (inicial!=null && simbolo!=null) {
             
-            for (Transicao t : transicoes) {
-                if (t.getEstado1().equals(e) && t.getSimbolo().equals(s)) {
-                    return t.getEstado2();
-                }            
+            for (Transicao transicao : transicoes) {
+                
+                if (transicao.getEstadoInicial().equals(inicial) && 
+                transicao.getSimboloLido().equals(simbolo)) {
+                    
+                    return transicao.getNovoEstado();
+                    
+                }
+                
             }
         
         }
         
         throw new Exception(
-            "Transição não definida: " + estado + "->" + simbolo
+            "Transição não definida: " + estadoInicial + "->" + simboloLido
         ); 
         
     }
@@ -219,19 +227,23 @@ public class FuncaoTransicao implements Iterable<Transicao> {
     
     /**
      * Verificar se a função de transição tem todas as transições de 
-     * <b>Estado × Símbolo → Estado</b> definidas.
+     * <b>Estado Inicial × Símbolo Lido → Novo Estado</b> definidas.
      * 
      * @return Se true, a função de transição está totalmente definida, se false,
-     * falta definir transições <b>Estado × Símbolo → Estado</b>.
+     * falta definir transições <b>Estado Inicial × Símbolo Lido → Novo Estado</b>.
      */
     public boolean totalmenteDefinida() {
+        
         return transicoes.size() == (estados.tamanho()*alfabeto.tamanho());
+    
     }
     
     
     @Override
     public Iterator<Transicao> iterator() {
+        
         return transicoes.iterator();
+    
     }
     
     

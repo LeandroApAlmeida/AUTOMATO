@@ -20,6 +20,16 @@
             <file>file:/D:/2.%20SOFTWARE/3.%20PROJETOS%20LEGADOS/GERAL/AUTOMATO/src/afd/AutomatoFinito.java</file>
         </group>
         <group name="Automato"/>
-        <group/>
+        <group>
+            <file>file:/D:/2.%20SOFTWARE/3.%20CÓDIGO%20APRENDIZADO/Automato/src/afd/automato/FuncaoTransicao.java</file>
+            <file>file:/D:/2.%20SOFTWARE/3.%20CÓDIGO%20APRENDIZADO/Automato/src/afd/automato/Simbolo.java</file>
+            <file>file:/D:/2.%20SOFTWARE/3.%20CÓDIGO%20APRENDIZADO/Automato/src/afd/automato/Transicao.java</file>
+            <file>file:/D:/2.%20SOFTWARE/3.%20CÓDIGO%20APRENDIZADO/Automato/src/afd/automato/package-info.java</file>
+            <file>file:/D:/2.%20SOFTWARE/3.%20CÓDIGO%20APRENDIZADO/Automato/src/afd/gui/package-info.java</file>
+            <file>file:/D:/2.%20SOFTWARE/3.%20CÓDIGO%20APRENDIZADO/Automato/src/afd/log/package-info.java</file>
+            <file>file:/D:/2.%20SOFTWARE/3.%20CÓDIGO%20APRENDIZADO/Automato/src/afd/log/Log.java</file>
+            <file>file:/D:/2.%20SOFTWARE/3.%20CÓDIGO%20APRENDIZADO/Automato/src/afd/automato/AutomatoFinito.java</file>
+            <file>file:/D:/2.%20SOFTWARE/3.%20CÓDIGO%20APRENDIZADO/Automato/src/afd/log/StatusParada.java</file>
+        </group>
     </open-files>
 </project-private>

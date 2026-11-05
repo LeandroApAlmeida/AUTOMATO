@@ -6,7 +6,7 @@ import java.util.List;
 
 
 /**
- * Classe que representa um conjunto genérico de objetos.
+ * Classe que representa um conjunto genérico de objetos (símbolos, estados, etc).
  * 
  * @param <E> Tipo do objeto.
  */
@@ -90,7 +90,7 @@ public abstract class Conjunto <E> implements Iterable<E> {
         
         int idx = indiceDe(o);
         
-        if (idx>=0) return get(idx);
+        if (idx >= 0) return get(idx);
         
         return null;
     

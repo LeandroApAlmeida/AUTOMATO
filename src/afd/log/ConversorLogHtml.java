@@ -15,7 +15,7 @@ import afd.automato.Simbolo;
 public class ConversorLogHtml {
     
     
-    /**Instância do autômato finito.*/
+    /**Instância do Autômato Finito.*/
     private final AutomatoFinito automatoFinito;
     
     /**Status de palavra aceita pelo Autômato Finito.*/
@@ -39,7 +39,7 @@ public class ConversorLogHtml {
     
     
     /**
-     * Converter o log de processamento da palavra de entrada para o formato
+     * Converter o log do processamento da palavra de entrada para o formato
      * HTML.
      * 
      * @throws Exception Erro ao processar o log.
@@ -55,11 +55,16 @@ public class ConversorLogHtml {
         sb.append("<style>");
         sb.append("    body {");
         sb.append("        font-family: Arial, sans-serif;");
-        sb.append("        font-size: 12px;");
+        //sb.append("        font-size: 12px;");
         sb.append("    }");  
         sb.append("</style>"); 
         sb.append("</head>");
         sb.append("<body>");
+        
+        sb.append("<span style=\"text-decoration: underline;\">");
+        sb.append("<b>Parâmetros ( M = (Σ, Q, δ, q<sub>0</sub>, F) ):</b>");
+        sb.append("</span>");
+        sb.append("<br><br>");
                 
         sb.append("<b>Alfabeto (&sum;):</b> ");
         sb.append(formatarAlfabeto(automatoFinito.getAlfabeto()));
@@ -69,15 +74,8 @@ public class ConversorLogHtml {
         sb.append(formatarEstados(automatoFinito.getEstados()));
         sb.append("<br>");
         
-        sb.append("<b>Estados Terminais (F):</b> ");
-        sb.append(formatarEstadosTerminais(automatoFinito.getEstados()));
-        sb.append("<br>");
-        
-        sb.append("<b>Estado Inicial (q<sub>0</sub>):</b> ");
-        sb.append(formatarEstadoInicial(automatoFinito.getEstadoInicial()));
-        sb.append("<br>");
-        
         sb.append("<b>Função de Transição (&delta;):</b>");
+        
         sb.append("<br><br>");
         sb.append(
             formatarFuncaoTransicao(
@@ -86,11 +84,22 @@ public class ConversorLogHtml {
                 automatoFinito.getEstados()
             )
         );
+        
+        sb.append("<br>");
+        
+        sb.append("<b>Estado Inicial (q<sub>0</sub>):</b> ");
+        sb.append(formatarEstadoInicial(automatoFinito.getEstadoInicial()));
+        sb.append("<br>");
+        
+        sb.append("<b>Estados Terminais (F):</b> ");
+        sb.append(formatarEstadosTerminais(automatoFinito.getEstados()));
+        sb.append("<br>");
+        
         sb.append("<br><br>");
         
         sb.append("<b>");
-        sb.append("Função Programa Estendida (");
-        sb.append("<i><span style=\"text-decoration: underline;\">&delta;</span></i>): ");
+        sb.append("<span style=\"text-decoration: underline;\">Função Programa Estendida (");
+        sb.append("<i><span style=\"text-decoration: underline;\">&delta;</span></i>):</span>");
         sb.append("</b>");
         sb.append("<br>");
         sb.append("<br>");        
@@ -103,14 +112,14 @@ public class ConversorLogHtml {
         sb.append("<br>");
         sb.append("<br>");
         
-        sb.append("<b>");
+        sb.append("<b><br>");
         
         if (aceita) {
-            sb.append("<font size=\"+1\" color=\"green\">"); 
-            sb.append("Palavra aceita pela gramática");
+            sb.append("<font color=\"green\">"); 
+            sb.append("Palavra aceita");
         } else {
-            sb.append("<font size=\"+1\" color=\"red\">");
-            sb.append("Palavra NÃO aceita pela gramática");
+            sb.append("<font color=\"red\">");
+            sb.append("Palavra rejeitada");
         }
         
         sb.append("</font>");
@@ -128,7 +137,7 @@ public class ConversorLogHtml {
     
     
     /**
-     * Formatar os itens na notação de conjunto {item1, item2, ..., itemN}.
+     * Formatar os itens na notação de conjunto: {item1, item2, ..., itemN}.
      * 
      * @param itens Itens a serem formatados.
      * 
@@ -136,24 +145,24 @@ public class ConversorLogHtml {
      */
     private String notacaoConjunto(Object[] itens) {
         
-        StringBuilder s = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         
-        s.append("{");
+        sb.append("{");
         
         if (itens.length > 0 ) {
         
-            s.append(itens[0]);
+            sb.append(itens[0]);
             
             for (int idx = 1; idx < itens.length; idx++) {
-                s.append(", ");
-                s.append(itens[idx].toString());
+                sb.append(", ");
+                sb.append(itens[idx].toString());
             }
             
         }
         
-        s.append("}");
+        sb.append("}");
         
-        return s.toString();
+        return sb.toString();
     
     }
       
@@ -302,60 +311,60 @@ public class ConversorLogHtml {
      */
     private String formatarFuncaoProgramaExtendida(Log log, Estado estadoInicial) { 
         
-        StringBuilder s = new StringBuilder();        
+        StringBuilder sb = new StringBuilder();        
         
         if (!log.getStatusParada().equals(StatusParada.PALAVRA_VAZIA)) {
             
             for (EntradaLog el : log) {
                 
-                s.append("<span style=\"text-decoration: underline;\">&delta;</span>");
-                s.append("(");
-                s.append(el.getEstado1());
-                s.append(", ");
-                s.append(el.getSimbolo());
-                s.append(el.getParcelaNaoLidaDaFita()); 
-                s.append(") ="); 
-                s.append("<br>");                
-                s.append("<span style=\"text-decoration: underline;\">&delta;</span>");
-                s.append("(");
-                s.append("&delta;");
-                s.append("(");
-                s.append(el.getEstado1());
-                s.append(", ");
-                s.append(el.getSimbolo());
-                s.append("), ");
+                sb.append("<span style=\"text-decoration: underline;\">&delta;</span>");
+                sb.append("(");
+                sb.append(el.getEstadoInicial());
+                sb.append(", ");
+                sb.append(el.getSimboloLido());
+                sb.append(el.getParcelaNaoLidaDaFita()); 
+                sb.append(") ="); 
+                sb.append("<br>");                
+                sb.append("<span style=\"text-decoration: underline;\">&delta;</span>");
+                sb.append("(");
+                sb.append("&delta;");
+                sb.append("(");
+                sb.append(el.getEstadoInicial());
+                sb.append(", ");
+                sb.append(el.getSimboloLido());
+                sb.append("), ");
                 
                 if (!el.getParcelaNaoLidaDaFita().isEmpty()) {
-                    s.append(el.getParcelaNaoLidaDaFita());
+                    sb.append(el.getParcelaNaoLidaDaFita());
                 } else {
-                    s.append("&epsilon;");
+                    sb.append("&epsilon;");
                 }
                 
-                s.append(") = ");
+                sb.append(") = ");
                 
                 if (el != log.getEntradaLog(log.tamanho()-1)) {
                     
-                    s.append("<br>");
+                    sb.append("<br>");
                     
                 } else {
                     
                     switch (log.getStatusParada()) {
                         
                         case TRANSICAO_INDEFINIDA: { 
-                            s.append("[<i><b>ERRO:</b> Símbolo indefinido \"");
-                            s.append(new String(new char[]{el.getSimbolo()}));
-                            s.append("\"</i>]");
+                            sb.append("[<i><b>ERRO:</b> Símbolo indefinido \"");
+                            sb.append(new String(new char[]{el.getSimboloLido()}));
+                            sb.append("\"</i>]");
                         } break;
                         
                         default: {
-                            s.append("<br>");                        
-                            s.append("<span style=\"text-decoration: underline;\">&delta;</span>");
-                            s.append("(");
-                            s.append(el.getEstado2());
-                            s.append(", &epsilon;) = ");
-                            s.append("<font size=\"+1\"><b><i>");
-                            s.append(el.getEstado2());  
-                            s.append("</i></b></font>");
+                            sb.append("<br>");                        
+                            sb.append("<span style=\"text-decoration: underline;\">&delta;</span>");
+                            sb.append("(");
+                            sb.append(el.getNovoEstado());
+                            sb.append(", &epsilon;) = ");
+                            sb.append("<b><i>");
+                            sb.append(el.getNovoEstado());  
+                            sb.append("</i></b>");
                         } break;
                         
                     }
@@ -366,17 +375,17 @@ public class ConversorLogHtml {
             
         } else {
             
-            s.append("<span style=\"text-decoration: underline;\">&delta;</span>");
-            s.append("(");
-            s.append(estadoInicial.getNome());
-            s.append(", &epsilon;) = ");
-            s.append("<font size=\"+1\"><b><i>");
-            s.append(estadoInicial.getNome());  
-            s.append("</i></b></font>");
+            sb.append("<span style=\"text-decoration: underline;\">&delta;</span>");
+            sb.append("(");
+            sb.append(estadoInicial.getNome());
+            sb.append(", &epsilon;) = ");
+            sb.append("<b><i>");
+            sb.append(estadoInicial.getNome());  
+            sb.append("</i></b>");
             
         }
         
-        return s.toString();
+        return sb.toString();
         
     }
     
