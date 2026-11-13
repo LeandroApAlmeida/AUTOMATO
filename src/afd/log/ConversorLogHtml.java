@@ -62,7 +62,7 @@ public class ConversorLogHtml {
         sb.append("<body>");
         
         sb.append("<span style=\"text-decoration: underline;\">");
-        sb.append("<b>Parâmetros ( M = (Σ, Q, δ, q<sub>0</sub>, F) ):</b>");
+        sb.append("<b>Parâmetros ( M = (&sum;, Q, &delta;, q<sub>0</sub>, F) ):</b>");
         sb.append("</span>");
         sb.append("<br><br>");
                 
